@@ -7,7 +7,7 @@ return all possible recipes with fresh Ingredients (not expired).
 
 ### Problem Analysis
 
-Though the problem looks like a simple REST API implementation, the business logic has greater scope for extention.
+Though the problem looks initially like a simple REST API implementation, the business logic has greater scope for extention.
 It is a variation of Donald Knuth's Algorithm X, Exact Cover, Max Cover with optimization for max recipes and min recipes.
 
 https://en.wikipedia.org/wiki/Knuth%27s_Algorithm_X. Due to time constraints from my side, I would love to discuss this in the
