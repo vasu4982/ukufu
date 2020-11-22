@@ -59,14 +59,14 @@ run the following command, where the 'docker-composer.yml' exists.
 $ docker-composer up
 ```
 
-Now solutions is downloaded and running...
+Now solution is downloaded (two docker images) and running...
 
 ### Summary
 
 Functionally the problem is divided into two REST API services, running in docker containers,
 
 1. Data Manager API - Which takes care of all data loading/backup/reloading and CRUD operations on entities like Recipe and Ingredients.
-   This works like an adaptor for other services and backend can be easily replaced with any Database. Running at http://127.0.0.1:5000.
+   This works like an adaptor for other services and the backend can be easily replaced with any Database. Running at http://127.0.0.1:5000.
    
 2. Lunch Manager API - Which serves the core business logic, initially fecthes data from 'Data Manger API' and runs at http://127.0.0.1:8000.
 
@@ -92,7 +92,7 @@ click on Try it out button
 
 <img src="https://github.com/narenallam/ukufu/blob/master/ukufu/images/Capture4.PNG" width=400>
 
-Click Execute button and we can see output there itself
+Click 'Execute' button and we can see the output there itself
 
 <img src="https://github.com/narenallam/ukufu/blob/master/ukufu/images/Capture5.PNG" width=400>
 
@@ -101,7 +101,6 @@ The above output is for current date (today), we can also pass custom date, usin
 <img src="https://github.com/narenallam/ukufu/blob/master/ukufu/images/Capture8.PNG" width=400>
 
 Enter date: 2021-3-26 as shown below
-
 
 <img src="https://github.com/narenallam/ukufu/blob/master/ukufu/images/Capture6.PNG" width=400>
 
@@ -119,7 +118,7 @@ __Platform__
 
 __Python Libraries Used__
 
-* flask: For res API
+* flask: For REST API
 * flask-restplus: For swagger
 * json: JSON parsing
 * pickle: in-memory data backup
@@ -207,4 +206,12 @@ __Running unit tests__
 # Make sure that we are inside first ukufu folder
 (venv) user@host:~/ukufu$ cd ukufu/db_api
 (venv) user@host:~/ukufu/ukufu/lunch_api$ python -m tests.unit_tests
+```
+### Scope for further enhancements
 
+* Scaling can be achieved with ThreadPool/ProcessPool and async and also depends on Cloud native implemention
+* Performance can be improved with in-memory distributed caching as business case demands
+* Profiling and benchmarking has to be implemented incrementally
+* Selecting data bases (SQL/NoSQL/GraphDB) as per the use cases
+* A robust security strategy can be made with Cloud Native/Cloud Based approaches, as business cases demand with proper authorization and authentication policies.
+* CI/CD pipe line has to be implemented for DEV, SIT, QA, UAT, PREPROD and PROD environments, by emphasizing on TDD and QA.
