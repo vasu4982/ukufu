@@ -1,0 +1,10 @@
+db_api:
+  image: narenallam/db_api:1.0
+  ports:
+    - "5000:5000"
+lunch_api:
+  image: narenallam/lunch_api:1.0
+  ports:
+    - "8000:8000"
+  links:
+    - db_api
