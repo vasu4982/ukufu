@@ -5,6 +5,16 @@
 A set of reciepes and Ingredients are given, build Rest API, which should determine and 
 return all possible recipes with fresh Ingredients (not expired). 
 
+### Problem Analysis
+
+Though the problem looks like a simple REST API implementation, the business logic has greater scope for extention.
+It is a variation of Donald Knuth's Algorithm X, Exact Cover, Max Cover with optimization for max recipes and min recipes.
+
+https://en.wikipedia.org/wiki/Knuth%27s_Algorithm_X. Due to time constraints from my side, I would love to discuss this in the
+later discussions.
+
+A minimalistic apparoach is taken to submit the solution in time.
+
 #### User Story
 
 As a User I would like to make a request to an API that will determine from a set of recipes what I can
