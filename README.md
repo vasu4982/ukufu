@@ -94,7 +94,7 @@ __Run Data Manger API__
 
 We Should see the below screen at http://127.0.0.1:5000
 
-<img src="https://github.com/narenallam/Tasks/blob/master/Images/Capture1.PNG" width=400>
+<img src="https://github.com/narenallam/ukufu/blob/master/ukufu/images/Capture1.PNG" width=400>
 
 __Run Lunch Manger API__
 
@@ -105,7 +105,7 @@ __Run Lunch Manger API__
 
 We Should see the below screen at http://127.0.0.1:8000
 
- <img src="https://github.com/narenallam/Tasks/blob/master/Images/Capture2.PNG" width=400>
+ <img src="https://github.com/narenallam/ukufu/blob/master/ukufu/images/Capture2.PNG" width=400>
  
 __Running Integration tests__
 
@@ -116,4 +116,4 @@ __Running Integration tests__
 
 We Should see the below output in terminal
 
- <img src="https://github.com/narenallam/Tasks/blob/master/Images/Capture3.PNG" width=600>
+ <img src="https://github.com/narenallam/ukufu/blob/master/ukufu/images/Capture3.PNG" width=600>
