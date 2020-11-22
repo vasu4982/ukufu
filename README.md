@@ -35,7 +35,27 @@ file in the root of the application
    
 ## Solution
 
-Functionally the problem is divided into two REST API services, 
+### Running Solution
+
+__Note:__ docker required
+
+Clone git repository: https://github.com/narenallam/ukufu.git and change directory to ukufu.
+
+                        (or)
+                        
+Simply download 'docker-composer.yml' file from the same repository (above ).
+
+run the following command, where the 'docker-composer.yml' exists.
+
+```bash
+$ docker-composer up
+```
+
+Now solutions is downloaded and running...
+
+### Summary
+
+Functionally the problem is divided into two REST API services, running in docker containers,
 
 1. Data Manager API - Which takes care of all data loading/backup/reloading and CRUD operations on entities like Recipe and Ingredients.
    This works like an adaptor for other services and backend can be easily replaced with any Database. Running at http://127.0.0.1:5000.
@@ -53,10 +73,62 @@ Functionally the problem is divided into two REST API services,
     ]
 }
 ```
+
+### API usage
+
+When both the services are running, we should see the below screen at http://127.0.0.1:8000/lunch/, 
+
+<img src="https://github.com/narenallam/ukufu/blob/master/ukufu/images/Capture7.PNG" width=400>
+
+click on Try it out button
+
+<img src="https://github.com/narenallam/ukufu/blob/master/ukufu/images/Capture4.PNG" width=400>
+
+Click Execute button and we can see output there itself
+
+<img src="https://github.com/narenallam/ukufu/blob/master/ukufu/images/Capture5.PNG" width=400>
+
+The above output is for current date (today), we can also pass custom date, using another API, click on the API as shown below
+
+<img src="https://github.com/narenallam/ukufu/blob/master/ukufu/images/Capture8.PNG" width=400>
+
+Enter date: 2021-3-26 as shown below
+
+
+<img src="https://github.com/narenallam/ukufu/blob/master/ukufu/images/Capture6.PNG" width=400>
+
+As swagger API documetation is built, most of the API from Data Manger API or Lunch Manger API are self explanatory.
+
+### Technolgy used
+
+__Platform__
+
+* Ubuntu 20.04 LTS
+* Mac OS X BigSur
+* Windows 10 Workstation with WSL2
+* docker
+* python 3.8.5 and 3.9
+
+__Python Libraries Used__
+
+* flask: For res API
+* flask-restplus: For swagger
+* json: JSON parsing
+* pickle: in-memory data backup
+* urllib3: cross service communication
+* logging: for app specific rotating file logger
+* unitest: for integration and unitests
+* mock: for unittesting
+
+__Tools used__
+
+* git
+* docker and docker-composer
+* vscode
    
 ### Running the services from source
 
-__Python version 3.8.5 required, on ubuntu (18.04/20.04)__
+__Python version >= 3.8.5 required, on ubuntu (18.04/20.04)__
 
 ```bash
 sudo apt install python3.8.5
@@ -64,32 +136,33 @@ sudo apt install python3.8.5
 __Pull the code from git repository__
 
 ```bash
-user@host:~/$ git clone https://github.com/narenallam/Tasks.git
+user@host:~/$ git clone https://github.com/narenallam/ukufu.git
 ```
 __Change directory to Tasks__
 
 ```bash
-user@host:~/$ cd Tasks
+user@host:~/$ cd ukufu
 ```
 __Creating Virtual environment__
 
 ```bash
-user@host:~/Tasks$ sudo apt-get install python3-pip
+user@host:~/ukufu$ sudo apt-get install python3-pip
 
-user@host:~/Tasks$ pip3 install virtualenv
+user@host:~/ukufu$ pip3 install virtualenv
 
-user@host:~/Tasks$ virtualenv -p python3.8.5 venv
+user@host:~/ukufu$ virtualenv -p python3.8.5 venv
 
-user@host:~/Tasks$ source venv/bin/activate
+user@host:~/ukufu$ source venv/bin/activate
 
-(venv) user@host:~/Tasks$  pip install -r requirements.txt
+(venv) user@host:~/ukufu$  pip install -r ukufu/lunch_api/requirements.txt
 ```
 
 __Run Data Manger API__
 
 ```bash
-# Make sure that we are inside Tasks folder
-(venv) user@host:~/Tasks$  python -m Src.data_api
+# Make sure that we are inside first ukufu folder
+(venv) user@host:~/ukufu$ cd ukufu/db_api
+(venv) user@host:~/ukufu/ukufu/db_api$ python -m src.data_api
 ```
 
 We Should see the below screen at http://127.0.0.1:5000
@@ -99,8 +172,9 @@ We Should see the below screen at http://127.0.0.1:5000
 __Run Lunch Manger API__
 
 ```bash
-# Make sure that we are inside Tasks folder
-(venv) user@host:~/Tasks$  python -m Src.lunch_api
+# Make sure that we are inside first ukufu folder
+(venv) user@host:~/ukufu$ cd ukufu/lunch_api
+(venv) user@host:~/ukufu/ukufu/lunch_api$  python -m src.lunch_api
 ```
 
 We Should see the below screen at http://127.0.0.1:8000
@@ -110,10 +184,15 @@ We Should see the below screen at http://127.0.0.1:8000
 __Running Integration tests__
 
 ```bash
-# Make sure that we are inside Tasks folder
-(venv) user@host:~/Tasks$ python -m Tests.int_tests
+# Make sure that we are inside first ukufu folder
+(venv) user@host:~/ukufu$ cd ukufu/lunch_api
+(venv) user@host:~/ukufu/ukufu/lunch_api$ python -m tests.int_tests
 ```
 
-We Should see the below output in terminal
+__Running unit tests__
 
- <img src="https://github.com/narenallam/ukufu/blob/master/ukufu/images/Capture3.PNG" width=600>
+```bash
+# Make sure that we are inside first ukufu folder
+(venv) user@host:~/ukufu$ cd ukufu/db_api
+(venv) user@host:~/ukufu/ukufu/lunch_api$ python -m tests.unit_tests
+
