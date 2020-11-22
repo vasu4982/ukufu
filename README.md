@@ -13,7 +13,7 @@ It is a variation of Donald Knuth's Algorithm X, Exact Cover, Max Cover with opt
 https://en.wikipedia.org/wiki/Knuth%27s_Algorithm_X. Due to time constraints from my side, I would love to discuss this in the
 later discussions.
 
-A minimalistic apparoach is taken to submit the solution in time.
+To submit the solution in time, a minimalistic apparoach has been taken.
 
 #### User Story
 
