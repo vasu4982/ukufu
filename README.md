@@ -119,6 +119,7 @@ __Python Libraries Used__
 * logging: for app specific rotating file logger
 * unitest: for integration and unitests
 * mock: for unittesting
+* pylint: PEP8 compliance
 
 __Tools used__
 
@@ -188,6 +189,9 @@ __Running Integration tests__
 (venv) user@host:~/ukufu$ cd ukufu/lunch_api
 (venv) user@host:~/ukufu/ukufu/lunch_api$ python -m tests.int_tests
 ```
+We should see the below out put in the terminal
+
+ <img src="https://github.com/narenallam/ukufu/blob/master/ukufu/images/Capture3.PNG" width=400>
 
 __Running unit tests__
 
