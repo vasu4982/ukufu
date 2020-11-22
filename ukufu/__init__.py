@@ -1,4 +1,4 @@
-import Src
-import Tests
+from . import src
+from . import tests
 
-__all__ = ['Src', 'Tests']
+__all__ = ['src', 'tests']

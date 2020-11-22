@@ -3,7 +3,7 @@
 import urllib3
 import json
 from unittest import TestCase, main
-from Src.app_logger import get_logger
+from .app_logger import get_logger
 
 __author__ = "Narendra Allam"
 __copyright__ = "Copyright 2020, Tech Task, ukufu.com"

@@ -39,7 +39,7 @@ class LunchManager(object):
         """
         status = ""
         try:
-            url = 'http://db_api:5000/recipe_crud/allrecipes/'
+            url = 'http://localhost:5000/recipe_crud/allrecipes/'
             resp = self.http.request('GET', url)
             data = json.loads(resp.data.decode('utf-8'))
             self.recipes = {}
@@ -54,7 +54,7 @@ class LunchManager(object):
             status += "All Recipes retrieved from data API;"
 
         try:
-            url = 'http://db_api:5000/ingredient_crud/allingredients/'
+            url = 'http://localhost:5000/ingredient_crud/allingredients/'
             resp = self.http.request('GET', url)
             data = json.loads(resp.data.decode('utf-8'))
             self.ingredients = {}
