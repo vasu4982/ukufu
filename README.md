@@ -35,14 +35,12 @@ file in the root of the application
    
 ## Solution
 
-### Running Solution
+### Running the Solution
 
 __Note:__ docker required
 
-Clone git repository: https://github.com/narenallam/ukufu.git and change directory to ukufu.
+Clone git repository: https://github.com/narenallam/ukufu.git and change directory to ukufu. (or)
 
-                        (or)
-                        
 Simply download 'docker-composer.yml' file from the same repository (above ).
 
 run the following command, where the 'docker-composer.yml' exists.
